@@ -10,7 +10,7 @@ module PhlexUI
 
     def default_attrs
       {
-        data: {controller: "command"}
+        data: {controller: "command", command_target: "content"}
       }
     end
   end

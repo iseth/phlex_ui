@@ -21,7 +21,7 @@ module PhlexUI
         xmlns: "http://www.w3.org/2000/svg",
         viewbox: "0 0 20 20",
         fill: "currentColor",
-        class: "w-4 h-4 mr-1.5"
+        class: "w-4 h-4 mr-1.5 opacity-50"
       ) do |s|
         s.path(
           fill_rule: "evenodd",

@@ -65,9 +65,17 @@ module PhlexUI
       flat_hash1 = flatten_hash(hash1)
       flat_hash2 = flatten_hash(hash2)
 
-      flat_hash1.merge(flat_hash2) do |key, oldval, newval|
+      merged_hash = flat_hash1.merge(flat_hash2) do |key, oldval, newval|
         "#{oldval} #{newval}"
       end
+
+      merged_hash[:class] = merge_tailwind_classes(flat_hash1&.dig(:class), flat_hash2&.dig(:class)) if flat_hash1&.dig(:class) && flat_hash2&.dig(:class)
+
+      merged_hash
+    end
+
+    def merge_tailwind_classes(default_classes, classes_to_merge)
+      ::TailwindMerge::Merger.new.merge("#{default_classes} #{classes_to_merge}")
     end
   end
 end
