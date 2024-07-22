@@ -15,3 +15,7 @@ end
 def phlex_context(&)
   render TestContext.new, &
 end
+
+class Minitest::Test
+  include PhlexUI::Helpers
+end

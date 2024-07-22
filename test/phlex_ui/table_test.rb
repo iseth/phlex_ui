@@ -21,7 +21,7 @@ class PhlexUI::TableTest < Minitest::Test
             PhlexUI.TableHead { "Name" }
             PhlexUI.TableHead { "Email" }
             PhlexUI.TableHead { "Status" }
-            PhlexUI.TableHead(class: "text-right") { "Role" }
+            PhlexUI.TableHead(class: cv("text-right")) { "Role" }
           end
         end
         PhlexUI.TableBody do

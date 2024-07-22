@@ -4,6 +4,8 @@ module PhlexUI
   class Base < Phlex::HTML
     attr_reader :attrs
 
+    include Helpers
+
     def initialize(**user_attrs)
       @attrs = PhlexUI::AttributeMerger.new(default_attrs, user_attrs).call
     end
