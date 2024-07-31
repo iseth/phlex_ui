@@ -1,4 +1,4 @@
-module PhlexUI
+module RBUI
   class AttributeMerger
     attr_reader :default_attrs, :user_attrs
 

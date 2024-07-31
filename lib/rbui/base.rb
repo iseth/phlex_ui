@@ -2,12 +2,12 @@
 
 require "tailwind_merge"
 
-module PhlexUI
+module RBUI
   class Base < Phlex::HTML
     attr_reader :attrs
 
     def initialize(**user_attrs)
-      @attrs = PhlexUI::AttributeMerger.new(default_attrs, user_attrs).call
+      @attrs = AttributeMerger.new(default_attrs, user_attrs).call
       @attrs[:class] = ::TailwindMerge::Merger.new.merge(@attrs[:class]) if @attrs[:class]
     end
 
